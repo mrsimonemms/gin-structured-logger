@@ -9,7 +9,25 @@ tasks:
       # Activate hooks
       husky install
 
+      exit
+
+  - name: Simple example
+    init: |
+      cd ${GITPOD_REPO_ROOT}/examples/simple
+      go install
+
+      go install github.com/cosmtrek/air@latest
+    command: |
+      cd ${GITPOD_REPO_ROOT}/examples/simple
+
+      air
+
 vscode:
   extensions:
     - donjayamanne.git-extension-pack
     - EditorConfig.EditorConfig
+    - golang.go
+
+ports:
+  - port: 3000
+    visibility: private
