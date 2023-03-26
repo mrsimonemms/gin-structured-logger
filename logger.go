@@ -52,7 +52,7 @@ func New() gin.HandlerFunc {
 		if c.Writer.Status() >= 500 {
 			logEvent = logger.Error()
 		} else {
-			logEvent = logger.Info()
+			logEvent = logger.Debug()
 		}
 
 		logEvent.
